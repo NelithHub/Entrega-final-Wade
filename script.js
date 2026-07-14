@@ -115,7 +115,7 @@ function mostrarProductos(productos){
 // VARIABLES DEL CARRITO
 // ==========================================
 
-let carrito = [];
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 const listaCarrito = document.getElementById("lista-carrito");
 
@@ -132,11 +132,47 @@ const botonVaciar = document.getElementById("vaciar-carrito");
 
 function agregarProducto(producto){
 
-    carrito.push(producto);
+
+    const productoExistente = carrito.find(function(item){
+
+        return item.id === producto.id;
+
+    });
+
+
+    if(productoExistente){
+
+        productoExistente.cantidad++;
+
+    }else{
+
+        producto.cantidad = 1;
+
+        carrito.push(producto);
+
+    }
+
+
+    guardarCarrito();
 
     mostrarCarrito();
 
 }
+
+// ==========================================
+// GUARDAR CARRITO
+// ==========================================
+
+function guardarCarrito(){
+
+    localStorage.setItem(
+        "carrito",
+        JSON.stringify(carrito)
+    );
+
+}
+
+
 // ==========================================
 // CALCULAR TOTAL
 // ==========================================
@@ -145,11 +181,13 @@ function calcularTotal(){
 
     let total = 0;
 
+
     for(let producto of carrito){
 
-        total += producto.precio;
+        total += producto.precio * producto.cantidad;
 
     }
+
 
     return total;
 
@@ -159,15 +197,11 @@ function calcularTotal(){
 // ==========================================
 
 function mostrarCarrito(){
-    
-    if(!listaCarrito || !contadorCarrito || !totalCarrito){
-
-        return;
-    }
 
     listaCarrito.innerHTML = "";
 
-    for(let producto of carrito){
+
+    carrito.forEach(function(producto, index){
 
         const item = document.createElement("div");
 
@@ -178,27 +212,168 @@ function mostrarCarrito(){
 
             <h4>${producto.nombre}</h4>
 
-            <p>$${producto.precio} USD</p>
+            <p>
+
+            Cantidad:
+            ${producto.cantidad}
+
+            </p>
+
+            <p>
+
+            Subtotal:
+            $${producto.precio * producto.cantidad} USD
+
+            </p>
+            <button 
+            class="restar-producto"
+            data-id="${index}">
+            -
+            </button>
+
+            <button 
+            class="sumar-producto"
+            data-id="${index}">
+            +
+            </button>
+    
+            <button 
+                class="eliminar-producto"
+                data-id="${index}">
+        
+                Eliminar
+        
+            </button>
 
         `;
 
 
         listaCarrito.appendChild(item);
 
+    });
+
+    let cantidadTotal = 0;
+
+
+    for(let producto of carrito){
+
+    cantidadTotal += producto.cantidad;
+
     }
 
-
-    contadorCarrito.textContent = carrito.length;
+    contadorCarrito.textContent = cantidadTotal;
 
     totalCarrito.textContent =
     "$" + calcularTotal() + " USD";
 
+    activarBotonesEliminar();
+
+    activarBotonesCantidad();
+
 }
 
-// Mostrar carrito al cargar la página
 
-mostrarCarrito();
+// ==========================================
+// ELIMINAR PRODUCTO
+// ==========================================
 
+function activarBotonesEliminar(){
+
+    const botonesEliminar = document.querySelectorAll(".eliminar-producto");
+
+
+    botonesEliminar.forEach(function(boton){
+
+
+        boton.addEventListener("click", function(){
+
+
+            const posicion = boton.dataset.id;
+
+
+            carrito.splice(posicion,1);
+
+
+            guardarCarrito();
+
+
+            mostrarCarrito();
+
+
+        });
+
+
+    });
+
+}
+
+// ==========================================
+// CAMBIAR CANTIDAD
+// ==========================================
+
+function activarBotonesCantidad(){
+
+
+    const botonesSumar =
+    document.querySelectorAll(".sumar-producto");
+
+
+    botonesSumar.forEach(function(boton){
+
+
+        boton.addEventListener("click",function(){
+
+
+            const posicion = boton.dataset.id;
+
+
+            carrito[posicion].cantidad++;
+
+
+            guardarCarrito();
+
+            mostrarCarrito();
+
+
+        });
+
+
+    });
+
+
+
+    const botonesRestar =
+    document.querySelectorAll(".restar-producto");
+
+
+    botonesRestar.forEach(function(boton){
+
+
+        boton.addEventListener("click",function(){
+
+
+            const posicion = boton.dataset.id;
+
+
+            if(carrito[posicion].cantidad > 1){
+
+                carrito[posicion].cantidad--;
+
+            }
+
+
+            guardarCarrito();
+
+            mostrarCarrito();
+
+
+        });
+
+
+    });
+
+
+}
 
 // ==========================================
 // VACIAR CARRITO
@@ -207,7 +382,13 @@ mostrarCarrito();
 botonVaciar.addEventListener("click", function(){
 
     carrito = [];
+    
+    guardarCarrito();
 
     mostrarCarrito();
 
 });
+
+// Mostrar carrito al cargar la página
+
+mostrarCarrito();
