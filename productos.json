@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "nombre": "Retrato Estilizado (Espíritus)",
+        "descripcion": "Ilustración conceptual en tonos fríos con detalles místicos y elementos de fantasía.",
+        "precio": 45,
+        "imagen": "imagenes/boceto.jpg.png"
+    },
+    {
+        "id": 2,
+        "nombre": "Floating Urgaria / In the Sky",
+        "descripcion": "Personajes etéreos flotando en fondos nocturnos con nubes y texturas suaves.",
+        "precio": 60,
+        "imagen": "imagenes/sky.jpg.jpg"
+    },
+    {
+        "id": 3,
+        "nombre": "Commission Deity (Nyx)",
+        "descripcion": "Ilustración de una deidad con una composición detallada de luces, sombras y nubes.",
+        "precio": 80,
+        "imagen": "imagenes/nyx.jpg.png"
+    }
+]
