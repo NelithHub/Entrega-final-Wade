@@ -392,3 +392,79 @@ botonVaciar.addEventListener("click", function(){
 // Mostrar carrito al cargar la página
 
 mostrarCarrito();
+
+// ==========================================
+// FORMULARIO DE CONTACTO
+// ==========================================
+
+const formulario = document.getElementById("formulario-contacto");
+
+const nombreInput = document.getElementById("nombre");
+
+const emailInput = document.getElementById("email");
+
+const mensajeInput = document.getElementById("mensaje");
+
+
+// ==========================================
+// VALIDAR FORMULARIO
+// ==========================================
+
+formulario.addEventListener("submit", function(event){
+
+
+    const nombre = nombreInput.value.trim();
+
+    const email = emailInput.value.trim();
+
+    const mensaje = mensajeInput.value.trim();
+
+
+    if(nombre === ""){
+
+        event.preventDefault();
+
+        alert("Por favor ingresá tu nombre.");
+
+        return;
+
+    }
+
+
+    if(email === ""){
+
+        event.preventDefault();
+
+        alert("Por favor ingresá tu correo electrónico.");
+
+        return;
+
+    }
+
+
+    const formatoEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+    if(!formatoEmail.test(email)){
+
+        event.preventDefault();
+
+        alert("Ingresá un correo electrónico válido.");
+
+        return;
+
+    }
+
+
+    if(mensaje === ""){
+
+        event.preventDefault();
+
+        alert("Por favor escribí un mensaje.");
+
+        return;
+
+    }
+
+
+});
