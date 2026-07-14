@@ -9,8 +9,8 @@ comisiones de ilustración digital.
 
 ## Tecnologías
 
-- HTML5
-- CSS3
+- HTML
+- CSS
 - JavaScript
 - Fetch API
 - LocalStorage
