@@ -1,0 +1,824 @@
+/* ==========================================
+   CELLART
+   STYLE.CSS
+   Proyecto Final
+   Autora: Ana Carolina Wade
+========================================== */
+
+/* ==========================================
+   RESET
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* ==========================================
+   SCROLL SUAVE
+========================================== */
+
+html{
+    scroll-behavior:smooth;
+}
+
+/* ==========================================
+   VARIABLES
+========================================== */
+
+:root{
+
+    --color-principal:#2D2051;
+    --color-secundario:#7D4FC6;
+    --color-fondo:#F6F5F8;
+    --color-blanco:#FFFFFF;
+    --color-texto:#333333;
+
+    --radio:12px;
+
+    --sombra:0 8px 20px rgba(0,0,0,.10);
+
+    --transicion:.3s ease;
+
+}
+
+/* ==========================================
+   BODY
+========================================== */
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:var(--color-fondo);
+
+    color:var(--color-texto);
+
+    line-height:1.6;
+
+}
+
+/* ==========================================
+   SELECCIÓN DE TEXTO
+========================================== */
+
+::selection{
+
+    background:var(--color-secundario);
+
+    color:var(--color-blanco);
+
+}
+
+/* ==========================================
+   CONTENEDOR
+========================================== */
+
+.contenedor{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:0 auto;
+
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+header{
+
+    background:linear-gradient(
+        135deg,
+        var(--color-principal),
+        #43306F
+    );
+
+    color:var(--color-blanco);
+
+    padding:60px 0;
+
+    box-shadow:var(--sombra);
+
+}
+
+/* ==========================================
+   HERO
+========================================== */
+
+.hero{
+
+    text-align:center;
+
+    margin-bottom:45px;
+
+}
+
+.hero h1{
+
+    font-size:3rem;
+
+    margin-bottom:15px;
+
+    color:var(--color-blanco);
+
+}
+
+.hero p{
+
+    max-width:720px;
+
+    margin:0 auto 30px;
+
+    color:var(--color-fondo);
+
+}
+
+/* ==========================================
+   BOTÓN PRINCIPAL
+========================================== */
+
+.btn-principal{
+
+    display:inline-block;
+
+    padding:14px 30px;
+
+    background:var(--color-secundario);
+
+    color:var(--color-blanco);
+
+    text-decoration:none;
+
+    border-radius:var(--radio);
+
+    font-weight:600;
+
+    transition:var(--transicion);
+
+}
+
+.btn-principal:hover{
+
+    background:var(--color-blanco);
+
+    color:var(--color-principal);
+
+    transform:translateY(-2px);
+
+}
+
+/* ==========================================
+   MENÚ
+========================================== */
+
+.menu{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:30px;
+
+    list-style:none;
+
+}
+
+.menu a{
+
+    color:var(--color-blanco);
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:var(--transicion);
+
+}
+
+.menu a:hover{
+
+    color:var(--color-secundario);
+
+}
+
+/* ==========================================
+   MAIN
+========================================== */
+
+main{
+
+    padding:70px 0;
+
+}
+
+/* ==========================================
+   SECCIONES
+========================================== */
+
+section{
+
+    margin-bottom:80px;
+
+}
+
+section h2{
+
+    text-align:center;
+
+    color:var(--color-principal);
+
+    font-size:2rem;
+
+    margin-bottom:20px;
+
+}
+
+/* ==========================================
+   DESCRIPCIÓN DE SECCIÓN
+========================================== */
+
+.descripcion-seccion{
+
+    max-width:700px;
+
+    margin:0 auto 40px;
+
+    text-align:center;
+
+    color:var(--color-texto);
+
+}
+
+/* ==========================================
+   PRODUCTOS
+   (FETCH API)
+========================================== */
+
+#contenedor-productos{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    align-items:stretch;
+
+    gap:30px;
+
+    min-height:320px;
+
+}
+
+/* ==========================================
+   TARJETAS
+========================================== */
+
+.tarjeta{
+
+    width:320px;
+
+    background:var(--color-blanco);
+
+    border-radius:var(--radio);
+
+    overflow:hidden;
+
+    display:flex;
+
+    flex-direction:column;
+
+    box-shadow:var(--sombra);
+
+    transition:var(--transicion);
+
+}
+
+.tarjeta:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.tarjeta img{
+
+    width:100%;
+
+    height:260px;
+
+    object-fit:cover;
+
+}
+
+.tarjeta h3{
+
+    color:var(--color-principal);
+
+    padding:20px 20px 10px;
+
+}
+
+.tarjeta p{
+
+    padding:0 20px;
+
+    flex-grow:1;
+
+}
+
+/* ==========================================
+   PRECIO
+========================================== */
+
+.precio{
+
+    color:var(--color-secundario);
+
+    font-size:1.2rem;
+
+    font-weight:bold;
+
+    margin:20px;
+
+}
+
+/* ==========================================
+   BOTONES
+========================================== */
+
+button{
+
+    font-family:inherit;
+
+    font-size:1rem;
+
+    background:var(--color-secundario);
+
+    color:var(--color-blanco);
+
+    border:none;
+
+    border-radius:8px;
+
+    padding:12px;
+
+    cursor:pointer;
+
+    transition:var(--transicion);
+
+}
+
+button:hover{
+
+    background:var(--color-principal);
+
+}
+
+/* ==========================================
+   BOTÓN AGREGAR AL CARRITO
+========================================== */
+
+.btn-carrito{
+
+    width:calc(100% - 40px);
+
+    margin:20px;
+
+    margin-top:auto;
+
+}
+/* ==========================================
+   RESEÑAS
+========================================== */
+
+.grid-reseñas{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+
+}
+
+.reseña{
+
+    background:var(--color-blanco);
+
+    padding:25px;
+
+    border-radius:var(--radio);
+
+    box-shadow:var(--sombra);
+
+    transition:var(--transicion);
+
+}
+
+.reseña:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.reseña h3{
+
+    color:var(--color-secundario);
+
+    margin-bottom:15px;
+
+}
+
+.reseña span{
+
+    display:block;
+
+    margin-top:15px;
+
+    font-weight:600;
+
+    color:var(--color-principal);
+
+}
+
+/* ==========================================
+   CARRITO
+========================================== */
+
+#carrito{
+
+    background:var(--color-blanco);
+
+    padding:30px;
+
+    border-radius:var(--radio);
+
+    box-shadow:var(--sombra);
+
+    margin-bottom:80px;
+
+}
+
+#carrito h2{
+
+    margin-bottom:25px;
+
+}
+
+#lista-carrito{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+    margin:25px 0;
+
+}
+
+.item-carrito{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:15px;
+
+    border-bottom:1px solid #dddddd;
+
+}
+
+.item-carrito img{
+
+    width:60px;
+
+    height:60px;
+
+    object-fit:cover;
+
+    border-radius:8px;
+
+}
+
+.item-info{
+
+    flex:1;
+
+}
+
+.item-info h4{
+
+    color:var(--color-principal);
+
+    margin-bottom:5px;
+
+}
+
+.item-info p{
+
+    font-size:.95rem;
+
+}
+
+.item-carrito button{
+
+    width:auto;
+
+    padding:8px 14px;
+
+    background:#d9534f;
+
+}
+
+.item-carrito button:hover{
+
+    background:#b52b27;
+
+}
+
+.total{
+
+    margin-top:20px;
+
+    font-size:1.2rem;
+
+    font-weight:bold;
+
+    color:var(--color-principal);
+
+}
+
+#vaciar-carrito{
+
+    width:100%;
+
+}
+
+/* ==========================================
+   FORMULARIO
+========================================== */
+
+form{
+
+    background:var(--color-blanco);
+
+    padding:35px;
+
+    border-radius:var(--radio);
+
+    box-shadow:var(--sombra);
+
+}
+
+fieldset{
+
+    border:none;
+
+}
+
+legend{
+
+    font-size:1.3rem;
+
+    color:var(--color-principal);
+
+    font-weight:600;
+
+    margin-bottom:25px;
+
+}
+
+label{
+
+    display:block;
+
+    margin-top:18px;
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+    color:var(--color-principal);
+
+}
+
+input,
+textarea{
+
+    width:100%;
+
+    padding:14px;
+
+    border:1px solid #d6d6d6;
+
+    border-radius:8px;
+
+    font-family:inherit;
+
+    font-size:1rem;
+
+    transition:var(--transicion);
+
+}
+
+textarea{
+
+    resize:vertical;
+
+    min-height:150px;
+
+}
+
+input::placeholder,
+textarea::placeholder{
+
+    color:#888888;
+
+}
+
+input:focus,
+textarea:focus{
+
+    border-color:var(--color-secundario);
+
+    outline:none;
+
+}
+
+#btn-enviar{
+
+    width:100%;
+
+    margin-top:25px;
+
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer{
+
+    background:var(--color-principal);
+
+    color:var(--color-blanco);
+
+    padding:35px 0;
+
+    text-align:center;
+
+}
+
+footer p{
+
+    margin:10px 0;
+
+}
+
+footer a{
+
+    color:var(--color-secundario);
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+footer a:hover{
+
+    color:var(--color-blanco);
+
+}
+
+/* ==========================================
+   ACCESIBILIDAD
+========================================== */
+
+a:focus,
+button:focus,
+input:focus,
+textarea:focus{
+
+    outline:3px solid var(--color-secundario);
+
+    outline-offset:3px;
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:768px){
+
+    .hero h1{
+
+        font-size:2.2rem;
+
+    }
+
+    .hero p{
+
+        font-size:1rem;
+
+    }
+
+    .menu{
+
+        flex-direction:column;
+
+        gap:15px;
+
+    }
+
+    #contenedor-productos{
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+    .tarjeta{
+
+        width:100%;
+
+        max-width:380px;
+
+    }
+
+    .grid-reseñas{
+
+        grid-template-columns:1fr;
+
+    }
+
+    form{
+
+        padding:25px;
+
+    }
+
+    #carrito{
+
+        padding:25px;
+
+    }
+
+    .item-carrito{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+    .item-carrito button{
+
+        width:100%;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .hero h1{
+
+        font-size:1.8rem;
+
+    }
+
+    section h2{
+
+        font-size:1.6rem;
+
+    }
+
+    .btn-principal{
+
+        width:100%;
+
+        text-align:center;
+
+    }
+
+}
+
+/* ==========================================
+   FIN DEL CSS
+========================================== */

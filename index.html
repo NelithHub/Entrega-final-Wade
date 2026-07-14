@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <!-- ==========================================
+         CONFIGURACIÓN BÁSICA
+    ========================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <!-- ==========================================
+         SEO
+    ========================================== -->
+
+    <meta name="description"
+          content="CellArt - Ilustraciones digitales y comisiones de arte personalizadas inspiradas en mundos de fantasía.">
+
+    <meta name="keywords"
+          content="Arte Digital, Ilustraciones, Comisiones, Fantasy Art, CellArt">
+
+    <meta name="author"
+          content="Ana Carolina Wade">
+
+    <title>CellArt | Ilustraciones Digitales</title>
+
+    <!-- ==========================================
+         GOOGLE FONTS
+    ========================================== -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- ==========================================
+         CSS
+    ========================================== -->
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+<body>
+
+    <!-- ==========================================
+         HEADER
+    ========================================== -->
+
+    <header id="inicio">
+
+        <div class="contenedor">
+
+            <!-- HERO -->
+
+            <section class="hero">
+
+                <h1>
+
+                    CellArt
+
+                </h1>
+
+                <p>
+
+                    Ilustraciones digitales y comisiones de arte
+                    personalizadas inspiradas en mundos de fantasía.
+
+                </p>
+
+                <a href="#productos"
+                   class="btn-principal">
+
+                    Ver Comisiones
+
+                </a>
+
+            </section>
+
+            <!-- MENÚ -->
+
+            <nav aria-label="Menú principal">
+
+                <ul class="menu">
+
+                    <li>
+
+                        <a href="#inicio">
+
+                            Inicio
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="#productos">
+
+                            Productos
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="#reseñas">
+
+                            Reseñas
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="#contacto">
+
+                            Contacto
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="#carrito">
+
+                            Carrito
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    <!-- ==========================================
+         CONTENIDO PRINCIPAL
+    ========================================== -->
+
+    <main class="contenedor">
+
+        <!-- ==========================================
+             PRODUCTOS
+        ========================================== -->
+
+        <section id="productos">
+
+            <h2>
+
+                Comisiones Disponibles
+
+            </h2>
+
+            <p class="descripcion-seccion">
+
+                Explorá algunas de las ilustraciones disponibles.
+                Los productos se cargarán automáticamente mediante
+                JavaScript utilizando Fetch API.
+
+            </p>
+
+            <div
+
+                id="contenedor-productos"
+
+                class="contenedor-productos"
+
+                aria-live="polite">
+
+                <!--
+                    JavaScript generará automáticamente
+                    las tarjetas de productos obtenidas
+                    desde productos.json mediante Fetch API.
+                -->
+
+            </div>
+
+        </section>        
+        <!-- ==========================================
+             RESEÑAS
+        ========================================== -->
+
+        <section id="reseñas">
+
+            <h2>
+
+                Opiniones de Clientes
+
+            </h2>
+
+            <div class="grid-reseñas">
+
+                <article class="reseña">
+
+                    <h3>
+
+                        ⭐⭐⭐⭐⭐
+
+                    </h3>
+
+                    <p>
+
+                        "Excelente atención y una ilustración hermosa.
+                        El resultado superó completamente mis expectativas."
+
+                    </p>
+
+                    <span>
+
+                        — Cliente 1
+
+                    </span>
+
+                </article>
+
+                <article class="reseña">
+
+                    <h3>
+
+                        ⭐⭐⭐⭐⭐
+
+                    </h3>
+
+                    <p>
+
+                        "Proceso muy profesional y comunicación constante.
+                        Recomiendo totalmente CellArt."
+
+                    </p>
+
+                    <span>
+
+                        — Cliente 2
+
+                    </span>
+
+                </article>
+
+                <article class="reseña">
+
+                    <h3>
+
+                        ⭐⭐⭐⭐☆
+
+                    </h3>
+
+                    <p>
+
+                        "Una experiencia excelente para regalar una ilustración
+                        personalizada."
+
+                    </p>
+
+                    <span>
+
+                        — Cliente 3
+
+                    </span>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================================
+             CARRITO
+        ========================================== -->
+
+        <aside id="carrito">
+
+            <h2>
+
+                🛒 Carrito de Compras
+
+            </h2>
+
+            <p>
+
+                Productos agregados:
+
+                <strong
+                    id="contador-carrito"
+                    aria-live="polite">
+
+                    0
+
+                </strong>
+
+            </p>
+
+            <div
+                id="lista-carrito"
+                aria-live="polite">
+
+                <!-- Los productos agregados aparecerán aquí automáticamente -->
+
+            </div>
+
+            <p class="total">
+
+                Total:
+
+                <span
+                    id="total"
+                    aria-live="polite">
+
+                    $0 USD
+
+                </span>
+
+            </p>
+
+            <button
+
+                id="vaciar-carrito"
+
+                type="button">
+
+                Vaciar carrito
+
+            </button>
+
+        </aside>
+
+        <!-- ==========================================
+           CONTACTO
+        ========================================== -->
+
+        <section id="contacto">
+
+            <h2>
+
+                Contacto
+
+            </h2>
+
+            <p>
+
+                ¿Querés solicitar una comisión personalizada?
+                Completá el siguiente formulario.
+
+            </p>
+
+            <!--
+                Reemplazar action="#"
+                por la URL de Formspree
+                cuando configuremos el servicio.
+            -->
+
+            <form
+
+                id="formulario-contacto"
+
+                action="#"
+
+                method="POST"
+
+                autocomplete="on">
+
+                <fieldset>
+
+                    <legend>
+
+                        Solicitar una comisión
+
+                    </legend>
+
+                    <label for="nombre">
+
+                        Nombre
+
+                    </label>
+
+                    <input
+
+                        type="text"
+
+                        id="nombre"
+
+                        name="nombre"
+
+                        placeholder="Ingresá tu nombre"
+
+                        autocomplete="name"
+
+                        required>
+
+                    <label for="email">
+
+                        Correo electrónico
+
+                    </label>
+
+                    <input
+
+                        type="email"
+
+                        id="email"
+
+                        name="email"
+
+                        placeholder="ejemplo@email.com"
+
+                        autocomplete="email"
+
+                        required>
+
+                    <label for="mensaje">
+
+                        Mensaje
+
+                    </label>
+
+                    <textarea
+
+                        id="mensaje"
+
+                        name="mensaje"
+
+                        rows="6"
+
+                        placeholder="Contame qué tipo de ilustración te gustaría..."
+
+                        required>
+
+                    </textarea>
+
+                    <button
+
+                        id="btn-enviar"
+
+                        type="submit">
+
+                        Enviar mensaje
+
+                    </button>
+
+                </fieldset>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <!-- ==========================================
+         FOOTER
+    ========================================== -->
+
+    <footer>
+
+        <div class="contenedor">
+
+            <p>
+
+                © 2026 CellArt.
+                Todos los derechos reservados.
+
+            </p>
+
+            <p>
+
+                Desarrollado por Ana Carolina Wade.
+
+            </p>
+
+            <p>
+
+                <a href="#inicio">
+
+                    Volver arriba ↑
+
+                </a>
+
+            </p>
+
+        </div>
+
+    </footer>
+
+    <!-- ==========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
