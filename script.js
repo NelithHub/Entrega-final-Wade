@@ -1,11 +1,3 @@
-// ==========================================
-// CELLART
-// Proyecto Final
-// JavaScript
-// ==========================================
-
-// Contenedor donde se mostrarán los productos
-
 const contenedorProductos = document.getElementById("contenedor-productos");
 
 // ==========================================
@@ -116,6 +108,17 @@ function mostrarProductos(productos){
 // ==========================================
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+
+carrito.forEach(function(producto){
+
+    if(!producto.cantidad){
+
+        producto.cantidad = 1;
+
+    }
+
+});
 
 const listaCarrito = document.getElementById("lista-carrito");
 
@@ -389,10 +392,6 @@ botonVaciar.addEventListener("click", function(){
 
 });
 
-// Mostrar carrito al cargar la página
-
-mostrarCarrito();
-
 // ==========================================
 // FORMULARIO DE CONTACTO
 // ==========================================
@@ -468,3 +467,6 @@ formulario.addEventListener("submit", function(event){
 
 
 });
+
+// Mostrar carrito inicial
+mostrarCarrito();
